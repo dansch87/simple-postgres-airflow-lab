@@ -1,1 +1,1 @@
-# simple-postgres-dwh
+# simple-postgres-airflow-lab
