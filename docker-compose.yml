@@ -4,7 +4,7 @@ services:
 
   dwh: 
     image: postgres:alpine 
-    container_name: ${STACK_NAME}_db
+    container_name: ${STACK_NAME}_postgres-db
     restart: ${RESTART_POLICY} 
     command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
     environment: 
