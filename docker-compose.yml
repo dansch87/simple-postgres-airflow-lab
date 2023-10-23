@@ -3,14 +3,14 @@ version: '3.3'
 services: 
 
   dwh: 
-    image: 'postgres:latest' 
-    container_name: postgres-dwh
-    restart: always 
+    image: postgres:alpine 
+    container_name: ${STACK_NAME}_db
+    restart: ${RESTART_POLICY} 
     command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
     environment: 
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: secret
-      POSTGRES_DB: dwh
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports: 
     - "5432:5432"
     volumes:
